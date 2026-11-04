@@ -1,27 +1,51 @@
 ---
 layout: layout.njk
-title: "Artículos y Lecturas"
+title: "Artículos — SprawlJournal"
 ---
 
-<main class="articles-index">
-  <div class="index-header">
-    <h1>Artículos y Lecturas</h1>
-    <p>Reflexiones sobre gestión de proyectos, inteligencia artificial y tecnología.</p>
-  </div>
+<section class="hero" style="padding-bottom:2rem;">
+  <p class="hero-eyebrow">Archivo completo</p>
+  <h1>Todos los artículos</h1>
+  <p>IA, gestión de proyectos TI, desarrollo de software, ingeniería de datos y más.</p>
+</section>
 
-  <div class="articles-grid">
-    {% for post in collections.articulo %}
-      <article class="article-card">
-        <div class="card-meta">
-          <span class="tag">{{ post.data.categoria or "General" }}</span>
-          <span class="date">{{ post.data.date }}</span>
-        </div>
-        <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-        <p>{{ post.data.descripcion or post.templateContent | truncate(140) }}</p>
-        <div class="card-author">
-          <span>Por {{ post.data.autor or "SprawlJournal" }}</span>
-        </div>
-      </article>
-    {% endfor %}
-  </div>
-</main>
+<div class="search-wrap">
+  <input type="search" id="search-box" placeholder="Filtrar artículos…">
+</div>
+
+<div class="main-wrap" style="grid-template-columns:1fr;">
+  <main>
+    <p class="section-title">Lecturas</p>
+    <div class="article-list">
+
+      {% for post in collections.articulo %}
+        <article class="article-card" 
+                 data-search="{{ post.data.categoria }} {{ post.data.title }}" 
+                 onclick="location.href='{{ post.url }}'">
+          <div>
+            <div class="article-meta">
+              {% if post.data.categoria %}
+                <span class="tag {{ post.data.categoria | lower }}">{{ post.data.categoria }}</span>
+              {% else %}
+                <span class="tag ia">IA</span>
+              {% endif %}
+              {% if post.data.date %}
+                <span class="article-date">{{ post.data.date }}</span>
+              {% endif %}
+            </div>
+            <h3 class="article-title">{{ post.data.title }}</h3>
+            <p class="article-excerpt">{{ post.data.descripcion or post.templateContent | truncate(140) }}</p>
+            <div class="article-author">
+              <div class="author-avatar">{{ post.data.autor_iniciales or "BG" }}</div>
+              <span class="author-name">{{ post.data.autor or "Bastián Guerrero" }} {% if post.data.lectura_tiempo %}· {{ post.data.lectura_tiempo }}{% endif %}</span>
+            </div>
+          </div>
+          <div class="article-thumb">⚡</div>
+        </article>
+      {% else %}
+        <p style="color: var(--muted); padding: 2rem 0;">No se encontraron artículos publicados aún.</p>
+      {% endfor %}
+
+    </div>
+  </main>
+</div>
