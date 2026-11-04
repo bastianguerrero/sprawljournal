@@ -1,5 +1,5 @@
 module.exports = function(eleventyConfig) {
-  // Copia tus archivos estáticos directamente al sitio compilado
+  // Copia recursos estáticos directamente a la salida
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("favicon.svg");
@@ -8,7 +8,7 @@ module.exports = function(eleventyConfig) {
     dir: {
       input: ".",
       includes: "_includes",
-      output: "_site" // Carpeta donde 11ty generará el HTML final
+      output: "_site"
     }
   };
 };
