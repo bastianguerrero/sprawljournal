@@ -1,14 +1,14 @@
 ---
 layout: layout.njk
 title: "Prompt Engineering para Project Managers: cómo hablarle bien a un LLM"
-date: 2026-10-28
+date: "2026-10-28"
 tags: articulo
 categoria: "IA"
 autor: "Bastián Guerrero"
 autor_iniciales: "BG"
 autor_cargo: "Jefe de Proyectos TI"
 lectura_tiempo: "8 min"
-descripcion: "Los modelos de lenguaje ya están en casi todas las herramientas de gestión. Pero usarlos bien no es instintivo. Esta guía explica los patrones que más sirven en contextos de PMO, planificación y reportería."
+descripcion: "Los patrones que más sirven en contextos de PMO, planificación y reportería — con ejemplos reales desde el trabajo diario."
 ---
 
 Los modelos de lenguaje grandes (LLMs) ya están integrados en casi todas las herramientas de gestión que usamos: Copilot en Teams, sugerencias en Monday, resúmenes automáticos en Notion. Pero hay una diferencia enorme entre usar esas features de forma pasiva y saber cómo instruir activamente a un modelo para que haga exactamente lo que necesitas.
