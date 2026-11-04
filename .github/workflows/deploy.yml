@@ -2,16 +2,18 @@ name: Deploy Eleventy site to Pages
 
 on:
   push:
-    branches: ["main"] # O "master", según el nombre de tu rama principal
+    branches: ["main"]
 
+# Permisos necesarios para GitHub Pages y autenticación OIDC
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Cancela ejecuciones anteriores si haces commits muy seguidos
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -46,3 +48,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 600000 # Previene cancelación prematura (10 min)
