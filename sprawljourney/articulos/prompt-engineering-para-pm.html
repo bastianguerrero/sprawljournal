@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Engineering para Project Managers — SprawlJourney</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="../index.html" class="site-logo">Sprawl<span>Journey</span></a>
+      <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul id="nav-links-list">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../articulos.html">Artículos</a></li>
+          <li><a href="../temas.html">Temas</a></li>
+          <li><a href="../acerca.html">Acerca</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="article-page">
+    <a href="../articulos.html" class="back-link">← Volver a artículos</a>
+
+    <div class="article-meta">
+      <span class="tag ia">IA</span>
+      <span class="article-date">28 de octubre de 2026</span>
+    </div>
+
+    <h1>Prompt Engineering para Project Managers: cómo hablarle bien a un LLM</h1>
+
+    <div class="author-row">
+      <div class="author-avatar-lg">BG</div>
+      <div class="author-info">
+        <strong>Bastián Guerrero</strong>
+        <span>Jefe de Proyectos TI · 8 min de lectura</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <p>Los modelos de lenguaje grandes (LLMs) ya están integrados en casi todas las herramientas de gestión que usamos: Copilot en Teams, sugerencias en Monday, resúmenes automáticos en Notion. Pero hay una diferencia enorme entre usar esas features de forma pasiva y saber cómo instruir activamente a un modelo para que haga exactamente lo que necesitas.</p>
+
+      <p>Esto es lo que se llama <strong>prompt engineering</strong> — y aunque suena a término de desarrollador, es esencialmente comunicación clara con un sistema que entiende lenguaje natural. Y si algo saben hacer los buenos PMs, es comunicarse con claridad.</p>
+
+      <h2>Por qué un PM debería saber esto</h2>
+
+      <p>Porque las tareas que más tiempo nos consumen — redactar informes, sintetizar actas, generar cronogramas, responder correos de escalación — son exactamente las que un LLM puede ejecutar bien con las instrucciones correctas. El cuello de botella no es el modelo: somos nosotros cuando no sabemos pedirle lo que queremos.</p>
+
+      <h2>Los 4 patrones que más uso en PMO</h2>
+
+      <h3>1. Rol + Contexto + Tarea</h3>
+      <p>El patrón más básico pero efectivo. En lugar de preguntar "resume esta acta", dile quién eres y para qué sirve el output:</p>
+
+      <pre><code>Eres un PM senior en un proyecto de migración cloud.
+Contexto: esta es el acta de nuestra reunión de comité de ayer.
+Tarea: extrae los 5 acuerdos principales en formato lista, 
+con responsable y fecha límite de cada uno.</code></pre>
+
+      <h3>2. Formato de salida explícito</h3>
+      <p>Los modelos por defecto generan texto corrido. Si necesitas una tabla, una lista numerada o un JSON, dilo explícitamente:</p>
+
+      <pre><code>Responde SOLO con una tabla markdown con estas columnas:
+| Riesgo | Probabilidad | Impacto | Mitigación |</code></pre>
+
+      <h3>3. Restricciones negativas</h3>
+      <p>Tan importante como decirle qué hacer es decirle qué NO hacer. Evita el relleno:</p>
+
+      <pre><code>No incluyas introducción ni conclusión.
+No uses frases genéricas como "es importante destacar que".
+Sé directo y usa verbos activos.</code></pre>
+
+      <h3>4. Iteración con contexto acumulado</h3>
+      <p>Los mejores outputs no salen del primer prompt. Usa el modelo como un colaborador: dale el draft, pídele que lo critique, luego que mejore la versión. Cada turno de conversación refina el resultado.</p>
+
+      <h2>Ejemplo real: generar un resumen ejecutivo</h2>
+
+      <p>Este es el prompt que uso para generar el resumen de avance mensual que va al comité directivo:</p>
+
+      <pre><code>Eres un Jefe de Proyectos TI en una consultoría. 
+Tu audiencia es el comité directivo de un cliente retail: 
+no técnicos, enfocados en resultados de negocio.
+
+Texto de entrada: [pega aquí el avance del equipo]
+
+Genera un resumen ejecutivo de máximo 200 palabras con:
+- Avance general (% completado)
+- 3 logros del período
+- 2 riesgos activos con acción de mitigación
+- Próximos hitos críticos (siguiente mes)
+
+Tono: directo, profesional. Sin jerga técnica.</code></pre>
+
+      <p>El resultado es consistente, en el tono correcto, y lo que antes me tomaba 30 minutos ahora tarda 3.</p>
+
+      <h2>Lo que el modelo no va a reemplazar</h2>
+
+      <p>La lectura política del proyecto. El criterio para saber qué riesgos escalar y cuáles absorber. La relación con los stakeholders. Eso sigue siendo tuyo. El LLM es el analista junior que ejecuta el trabajo pesado — tú sigues siendo el que sabe qué pedirle y qué hacer con el output.</p>
+
+      <blockquote>El prompt engineering no es magia, es precisión. Mientras más claro eres con lo que necesitas, mejor es el resultado. Exactamente como gestionar un equipo.</blockquote>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 <strong>SprawlJourney</strong> — Hecho con curiosidad y demasiado café.</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
