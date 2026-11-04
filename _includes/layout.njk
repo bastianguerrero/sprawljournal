@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | Sprawl Journal</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+  <header>
+    <nav class="nav-container">
+      <a href="/" class="logo">Sprawl Journal</a>
+      <ul class="nav-links">
+        <li><a href="/articulos.html">Artículos</a></li>
+        <li><a href="/temas.html">Temas</a></li>
+        <li><a href="/acerca.html">Acerca</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <article class="articulo-detalle">
+      <header class="articulo-header">
+        <h1>{{ title }}</h1>
+        {% if date %}
+          <time datetime="{{ date }}">{{ date }}</time>
+        {% endif %}
+      </header>
+
+      <div class="articulo-body">
+        {{ content | safe }}
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; Sprawl Journal</p>
+  </footer>
+  
+  <script src="/js/script.js"></script>
+</body>
+</html>
