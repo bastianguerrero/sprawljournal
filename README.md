@@ -1,11 +1,11 @@
-# SprawlJourney
+# SprawlJournal
 
 Blog personal sobre IA, gestión de proyectos TI, desarrollo de software e ingeniería de datos.
 
 ## Estructura
 
 ```
-sprawljourney/
+sprawljournal/
 ├── index.html          ← Portada
 ├── articulos.html      ← Listado de artículos
 ├── temas.html          ← Categorías
