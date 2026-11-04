@@ -15,35 +15,25 @@ title: "Artículos — SprawlJournal"
 
 <div class="main-wrap" style="grid-template-columns:1fr;">
   <main>
-    <p class="section-title">Lecturas</p>
+    <p class="section-title">2026</p>
     <div class="article-list">
 
       {% for post in collections.articulo %}
-        <article class="article-card" 
-                 data-search="{{ post.data.categoria }} {{ post.data.title }}" 
-                 onclick="location.href='{{ post.url }}'">
+        <article class="article-card" data-search="{{ post.data.categoria }} {{ post.data.title }}" onclick="location.href='{{ post.url }}'">
           <div>
             <div class="article-meta">
-              {% if post.data.categoria %}
-                <span class="tag {{ post.data.categoria | lower }}">{{ post.data.categoria }}</span>
-              {% else %}
-                <span class="tag ia">IA</span>
-              {% endif %}
-              {% if post.data.date %}
-                <span class="article-date">{{ post.data.date }}</span>
-              {% endif %}
+              <span class="tag {{ post.data.categoria | lower }}">{{ post.data.categoria or "IA" }}</span>
+              <span class="article-date">{{ post.data.date }}</span>
             </div>
             <h3 class="article-title">{{ post.data.title }}</h3>
-            <p class="article-excerpt">{{ post.data.descripcion or post.templateContent | truncate(140) }}</p>
+            <p class="article-excerpt">{{ post.data.descripcion }}</p>
             <div class="article-author">
               <div class="author-avatar">{{ post.data.autor_iniciales or "BG" }}</div>
-              <span class="author-name">{{ post.data.autor or "Bastián Guerrero" }} {% if post.data.lectura_tiempo %}· {{ post.data.lectura_tiempo }}{% endif %}</span>
+              <span class="author-name">{{ post.data.autor or "Bastián Guerrero" }} · {{ post.data.lectura_tiempo or "5 min" }}</span>
             </div>
           </div>
-          <div class="article-thumb">⚡</div>
+          <div class="article-thumb">🤖</div>
         </article>
-      {% else %}
-        <p style="color: var(--muted); padding: 2rem 0;">No se encontraron artículos publicados aún.</p>
       {% endfor %}
 
     </div>
