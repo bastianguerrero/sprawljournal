@@ -3,41 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} | Sprawl Journal</title>
+  <title>{{ title }} — SprawlJournal</title>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
+
   <header>
-    <nav class="nav-container">
-      <a href="/" class="logo">Sprawl Journal</a>
-      <ul class="nav-links">
-        <li><a href="/articulos.html">Artículos</a></li>
-        <li><a href="/temas.html">Temas</a></li>
-        <li><a href="/acerca.html">Acerca</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <svg viewBox="12 6 76 96" width="22" height="28" aria-hidden="true">
+          <path d="M78 22 C 60 8, 28 14, 28 36 C 28 58, 72 50, 72 72 C 72 94, 40 96, 22 80" fill="none" stroke="#e8eaf0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="78" cy="22" r="5" fill="#e8eaf0"/>
+          <circle cx="28" cy="36" r="5" fill="#e8eaf0"/>
+          <circle cx="72" cy="72" r="5" fill="#e8eaf0"/>
+          <circle cx="22" cy="80" r="7" fill="#4f8cff"/>
+        </svg>
+        <span>Sprawl<span style="color:#4f8cff">Journal</span></span>
+      </a>
+      <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul id="nav-links-list">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/articulos.html">Artículos</a></li>
+          <li><a href="/temas.html">Temas</a></li>
+          <li><a href="/acerca.html">Acerca</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main class="main-content">
-    <article class="articulo-detalle">
-      <header class="articulo-header">
-        <h1>{{ title }}</h1>
-        {% if date %}
-          <time datetime="{{ date }}">{{ date }}</time>
-        {% endif %}
-      </header>
+  {% if tags and "articulo" in tags %}
+    <div class="article-page">
+      <a href="/articulos.html" class="back-link">← Volver a artículos</a>
 
-      <div class="articulo-body">
+      <div class="article-meta">
+        {% if categoria %}
+          <span class="tag ia">{{ categoria }}</span>
+        {% endif %}
+        {% if date %}
+          <span class="article-date">{{ date }}</span>
+        {% endif %}
+      </div>
+
+      <h1>{{ title }}</h1>
+
+      <div class="author-row">
+        <div class="author-avatar-lg">{{ autor_iniciales or "BG" }}</div>
+        <div class="author-info">
+          <strong>{{ autor or "Bastián Guerrero" }}</strong>
+          <span>{{ autor_cargo or "Jefe de Proyectos TI" }} · {{ lectura_tiempo or "8 min" }} de lectura</span>
+        </div>
+      </div>
+
+      <div class="article-body">
         {{ content | safe }}
       </div>
-    </article>
-  </main>
+    </div>
+  {% else %}
+    {{ content | safe }}
+  {% endif %}
 
   <footer>
-    <p>&copy; Sprawl Journal</p>
+    <p>© 2026 <strong>SprawlJournal</strong> — Hecho con curiosidad y demasiado café.</p>
   </footer>
-  
+
   <script src="/js/script.js"></script>
 </body>
 </html>
