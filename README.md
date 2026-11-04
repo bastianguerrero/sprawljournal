@@ -1,28 +1,20 @@
-# SprawlJournal
-
-Blog personal sobre IA, gestión de proyectos TI, desarrollo de software e ingeniería de datos.
-
-## Estructura
-
-```
 sprawljournal/
-├── index.html          ← Portada
-├── articulos.html      ← Listado de artículos
-├── temas.html          ← Categorías
-├── acerca.html         ← Sobre el blog
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
+├── _includes/
+│   └── layout.njk
+├── articulos/
+│   ├── prompt-engineering-para-pm.md
+│   └── mi-primera-lectura.md
 ├── css/
-│   └── style.css
+│   └── style.css (tu archivo actual)
 ├── js/
-│   └── script.js
-└── articulos/
-    └── *.html          ← Cada artículo individual
-```
-
-## Cómo agregar un artículo nuevo
-
-1. Copia `articulos/prompt-engineering-para-pm.html` como plantilla
-2. Edita el contenido dentro de `<div class="article-body">`
-3. Actualiza título, fecha, tag y autor en el encabezado del artículo
-4. Agrega una tarjeta en `index.html` y `articulos.html`
-
-## Publicado con GitHub Pages
+│   └── script.js (tu archivo actual)
+├── .eleventy.js
+├── index.html
+├── articulos.html
+├── temas.html
+├── acerca.html
+├── favicon.svg
+└── package.json
