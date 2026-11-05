@@ -29,7 +29,6 @@
         <ul id="nav-links-list">
           <li><a href="/">Inicio</a></li>
           <li><a href="/articulos.html">Artículos</a></li>
-          <li><a href="/temas.html">Temas</a></li>
           <li><a href="/acerca.html">Acerca</a></li>
         </ul>
       </nav>
@@ -42,7 +41,7 @@
 
       <div class="article-meta">
         {% if categoria %}
-          <span class="tag ia">{{ categoria }}</span>
+          <span class="tag {{ clase or 'ia' }}">{{ categoria }}</span>
         {% endif %}
         {% if date %}
           <span class="article-date">{{ date }}</span>
