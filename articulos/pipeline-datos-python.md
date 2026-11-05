@@ -9,7 +9,7 @@ emoji: "🐍"
 autor: "Bastián Guerrero"
 autor_iniciales: "BG"
 autor_cargo: "Jefe de Proyectos TI"
-lectura_tiempo: "3 min"
+lectura_tiempo: "5 min"
 descripcion: "Extracción, transformación y carga de indicadores económicos chilenos con Python, pandas y SQLite. Sin frameworks enterprise."
 ---
 

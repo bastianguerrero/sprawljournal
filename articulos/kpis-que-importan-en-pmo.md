@@ -9,7 +9,7 @@ emoji: "📊"
 autor: "Bastián Guerrero"
 autor_iniciales: "BG"
 autor_cargo: "Jefe de Proyectos TI"
-lectura_tiempo: "3 min"
+lectura_tiempo: "4 min"
 descripcion: "No todos los indicadores son iguales. Algunos se ven bien en el comité y no sirven para nada. Estos son los que sí mueven la aguja."
 ---
 

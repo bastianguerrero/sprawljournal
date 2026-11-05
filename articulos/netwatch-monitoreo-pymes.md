@@ -9,7 +9,7 @@ emoji: "📡"
 autor: "Bastián Guerrero"
 autor_iniciales: "BG"
 autor_cargo: "Jefe de Proyectos TI"
-lectura_tiempo: "3 min"
+lectura_tiempo: "4 min"
 descripcion: "Mi proyecto de tesis: una plataforma SaaS de monitoreo de red para pequeñas empresas chilenas, desarrollada como MVP con Scrum."
 ---
 

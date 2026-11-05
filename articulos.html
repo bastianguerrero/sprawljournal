@@ -4,27 +4,60 @@ title: Artículos
 permalink: /articulos.html
 ---
 
+<style>
+  .topic-list li a { cursor: pointer; }
+  .topic-list li a.active { background: var(--tag-bg); color: var(--text); }
+  .topic-list li a.active .topic-count { background: var(--accent); color: #fff; }
+  .sidebar { position: sticky; top: 88px; max-height: calc(100vh - 110px); overflow-y: auto; }
+  .filter-label { display: block; font-size: 0.75rem; color: var(--muted); margin: 0.9rem 0 0.35rem; }
+  .filter-label:first-of-type { margin-top: 0; }
+  .filter-select {
+    width: 100%; background: var(--bg); color: var(--text);
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.5rem 0.6rem; font-family: inherit; font-size: 0.88rem;
+  }
+  .filter-select:focus { outline: none; border-color: var(--accent); }
+  .filter-clear {
+    margin-top: 1.1rem; width: 100%; background: none; color: var(--muted);
+    border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem;
+    font-family: inherit; font-size: 0.85rem; cursor: pointer;
+  }
+  .filter-clear:hover { color: var(--text); border-color: var(--muted); }
+  #results-count { color: var(--muted); font-weight: 400; }
+  #empty-state { color: var(--muted); padding: 2rem 0; font-size: 0.95rem; }
+  @media (max-width: 768px) {
+    .sidebar { position: static; max-height: none; overflow: visible; }
+    .topic-list { flex-direction: row; flex-wrap: wrap; gap: 0.4rem; }
+    .topic-list li a { border: 1px solid var(--border); gap: 0.5rem; }
+  }
+</style>
+
 <section class="hero" style="padding-bottom:2rem;">
   <p class="hero-eyebrow">Archivo completo</p>
-  <h1>Todos los artículos</h1>
-  <p>IA, gestión de proyectos TI, desarrollo de software, ingeniería de datos y más.</p>
+  <h1>Artículos</h1>
+  <p>Busca por palabra clave, filtra por tema, fecha o tiempo de lectura, y ordena como prefieras.</p>
 </section>
 
 <div class="search-wrap">
-  <input type="search" id="search-box" placeholder="Filtrar artículos…">
+  <input type="search" id="search-box" placeholder="Buscar artículos — ej. 'scraping', 'PMO', 'Telegram'…">
 </div>
 
-<div class="main-wrap" style="grid-template-columns:1fr;">
+<div class="main-wrap">
   <main>
-    <p class="section-title">2026</p>
-    <div class="article-list">
+    <p class="section-title"><span id="results-label">Todos los artículos</span> · <span id="results-count"></span></p>
 
-      {% for post in collections.articulo %}
-        <article class="article-card" data-search="{{ post.data.categoria }} {{ post.data.title }}" onclick="location.href='{{ post.url }}'">
+    <div class="article-list">
+      {% for post in collections.articulo | reverse %}
+        <article class="article-card"
+          data-topic="{{ post.data.clase or 'ia' }}"
+          data-fecha="{{ post.data.date }}"
+          data-min="{{ (post.data.lectura_tiempo or '5 min') | replace(' min', '') | int }}"
+          data-search="{{ post.data.categoria }} {{ post.data.title }} {{ post.data.descripcion }}"
+          onclick="location.href='{{ post.url }}'">
           <div>
             <div class="article-meta">
-              <span class="tag {{ post.data.categoria | lower }}">{{ post.data.categoria or "IA" }}</span>
-              <span class="article-date">{{ post.data.date }}</span>
+              <span class="tag {{ post.data.clase or (post.data.categoria | lower) }}">{{ post.data.categoria or "IA" }}</span>
+              <span class="article-date" data-fecha="{{ post.data.date }}">{{ post.data.date }}</span>
             </div>
             <h3 class="article-title">{{ post.data.title }}</h3>
             <p class="article-excerpt">{{ post.data.descripcion }}</p>
@@ -33,10 +66,54 @@ permalink: /articulos.html
               <span class="author-name">{{ post.data.autor or "Bastián Guerrero" }} · {{ post.data.lectura_tiempo or "5 min" }}</span>
             </div>
           </div>
-          <div class="article-thumb">🤖</div>
+          <div class="article-thumb">{{ post.data.emoji or "📝" }}</div>
         </article>
       {% endfor %}
-
     </div>
+
+    <p id="empty-state" class="hidden">No hay artículos que coincidan con estos filtros.</p>
   </main>
+
+  <aside class="sidebar">
+    <div class="sidebar-block">
+      <p class="section-title">Tema</p>
+      <ul class="topic-list" id="topic-filter">
+        <li><a href="#todos" data-topic="todos" data-label="Todos los artículos" class="active">Todos <span class="topic-count"></span></a></li>
+        <li><a href="#ia" data-topic="ia" data-label="Inteligencia Artificial">🤖 Inteligencia Artificial <span class="topic-count"></span></a></li>
+        <li><a href="#gestion" data-topic="gestion" data-label="Gestión de Proyectos">📋 Gestión de Proyectos <span class="topic-count"></span></a></li>
+        <li><a href="#dev" data-topic="dev" data-label="Desarrollo">💻 Desarrollo <span class="topic-count"></span></a></li>
+        <li><a href="#datos" data-topic="datos" data-label="Datos">📊 Datos <span class="topic-count"></span></a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-block">
+      <p class="section-title">Refinar</p>
+
+      <label class="filter-label" for="f-sort">Ordenar por</label>
+      <select id="f-sort" class="filter-select">
+        <option value="recientes">Más recientes</option>
+        <option value="antiguos">Más antiguos</option>
+        <option value="corto">Lectura más corta</option>
+        <option value="largo">Lectura más larga</option>
+      </select>
+
+      <label class="filter-label" for="f-fecha">Fecha</label>
+      <select id="f-fecha" class="filter-select">
+        <option value="todas">Cualquier fecha</option>
+        <option value="30">Últimos 30 días</option>
+        <option value="90">Últimos 3 meses</option>
+        <option value="anio">Este año</option>
+      </select>
+
+      <label class="filter-label" for="f-min">Tiempo de lectura</label>
+      <select id="f-min" class="filter-select">
+        <option value="todos">Cualquiera</option>
+        <option value="rapido">Rápido (hasta 2 min)</option>
+        <option value="medio">Medio (3 a 5 min)</option>
+        <option value="largo">Largo (6 min o más)</option>
+      </select>
+
+      <button type="button" id="f-clear" class="filter-clear">Limpiar filtros</button>
+    </div>
+  </aside>
 </div>

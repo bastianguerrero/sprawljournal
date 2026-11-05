@@ -2,14 +2,14 @@
 layout: layout.njk
 title: "Lo que aprendí migrando 400 servidores a GCP"
 date: "2026-10-03"
-tags: articulo
+tags: [articulo, destacado]
 categoria: "Dev / Cloud"
 clase: "dev"
 emoji: "☁️"
 autor: "Bastián Guerrero"
 autor_iniciales: "BG"
 autor_cargo: "Jefe de Proyectos TI"
-lectura_tiempo: "3 min"
+lectura_tiempo: "6 min"
 descripcion: "Un lift-and-shift de esta escala tiene más aristas de gestión que técnicas. Lecciones desde el lado del PM, no del arquitecto de soluciones."
 ---
 
