@@ -98,15 +98,15 @@ Si a futuro decides implementar una app propia, un sitio web dinámico o microse
 
 A continuación, se detalla el presupuesto estimado para poner en marcha y mantener este ecosistema digital:
 
-| Ítem / Servicio | Descripción | Costo Estimado (CLP) | Frecuencia |
-| :--- | :--- | :--- | :--- |
-| ****Dominio `.cl`**** | Registro de marca o nombre en NIC Chile | $15.000 – $20.000 | Anual |
-| ****Correo + Nube (iCloud+)**** | Plan de 50 GB o 200 GB con dominio personalizado | $990 – $2.990 | Mensual |
-| ****Google Workspace (Opción B)**** | Licencia por casilla corporativa (`@tudominio.cl`) | ~$6.000 – $7.000 | Mensual por usuario |
-| ****Calendly (Plan Básico)**** | Gestión automatizada de agenda y reservas | $0 (Versión Free suficiente) | Mensual |
-| ****Servicios Cloud / Nube**** | Hosting o backend (si aplica, en baja demanda) | $0 – $9.000 | Mensual |
-| ****TOTAL INICIAL ESTIMADO**** | ****Dominio anual + 1er mes (Opción iCloud+)**** | ****~$16.000 – $23.000**** | ****Primer Mes**** |
-| ****TOTAL RECURRENTE**** | ****Mantenimiento mensual del ecosistema**** | ****~$1.000 – $3.000**** | ****Mensual**** |
+| Ítem / Servicio                     | Descripción                                        | Costo Estimado (CLP)         | Frecuencia          |
+|-------------------------------------|----------------------------------------------------|------------------------------|---------------------|
+| ****Dominio `.cl`****               | Registro de marca o nombre en NIC Chile            | $9.900  (NIC CHILE)– $20.000 | Anual               |
+| ****Correo + Nube (iCloud+)****     | Plan de 50 GB o 200 GB con dominio personalizado   | $990 – $2.990                | Mensual             |
+| ****Google Workspace (Opción B)**** | Licencia por casilla corporativa (`@tudominio.cl`) | ~$6.000 – $7.000             | Mensual por usuario |
+| ****Calendly (Plan Básico)****      | Gestión automatizada de agenda y reservas          | $0 (Versión Free suficiente) | Mensual             |
+| ****Servicios Cloud / Nube****      | Hosting o backend (si aplica, en baja demanda)     | $0 – $9.000                  | Mensual             |
+| ****TOTAL INICIAL ESTIMADO****      | ****Dominio anual + 1er mes (Opción iCloud+)****   | ****~$15.000 – $23.000****   | ****Primer Mes****  |
+| ****TOTAL RECURRENTE****            | ****Mantenimiento mensual del ecosistema****       | ****~$1.000 – $7.000****     | ****Mensual****     |
 
 **---**
 
