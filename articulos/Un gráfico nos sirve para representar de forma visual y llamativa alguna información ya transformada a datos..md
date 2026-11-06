@@ -4,7 +4,7 @@ title: "Un buen Gráfico puede esconder un desastre"
 date: 2026-11-04
 tags: articulo
 categoria: "Gestión de Proyectos"
-clase: "Gestión de Proyectos"
+clase: "gestion"
 emoji: "📈"
 autor: "Bastián Guerrero"
 autor_iniciales: "BG"
