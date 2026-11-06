@@ -1,7 +1,7 @@
 ---
 layout: layout.njk
 title: "Cuando no existe una API podemos obtener a lo bruto"
-date: 2026-11-02
+date: "2026-11-02"
 tags: articulo
 categoria: "Desarrollo"
 clase: "dev"
