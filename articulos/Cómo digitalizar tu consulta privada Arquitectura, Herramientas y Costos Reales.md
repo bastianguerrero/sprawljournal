@@ -1,8 +1,8 @@
 ---
-layout: layout.njk
-title: "Guía Definitiva: Cómo armar tu consulta digital (Correo, Dominio y Agendamiento)"
+layout: "layout.njk"
+title: "Guía Definitiva: Cómo armar tu consulta digital"
 date: 2026-11-05
-tags: articulo
+tags: "articulo"
 categoria: "Gestión"
 clase: "Emprendimiento"
 emoji: "💻"
@@ -10,7 +10,7 @@ autor: "Bastián Guerrero"
 autor_iniciales: "BG"
 autor_cargo: "PMO TI"
 lectura_tiempo: "15 min"
-descripcion: "Paso a paso técnico y financiero para digitalizar tu consulta de kinesiología o terapia ocupacional.”
+descripcion: "Paso a paso técnico y financiero para digitalizar tu consulta de kinesiología o terapia ocupacional."
 ---
 
 # **Cómo digitalizar tu consulta privada: Arquitectura, Herramientas y Costos Reales**
