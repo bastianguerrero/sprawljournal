@@ -3,7 +3,7 @@ layout: "layout.njk"
 title: "Guía Definitiva: Cómo armar tu consulta digital"
 date: 2026-11-05
 tags: "articulo"
-categoria: "Gestión"
+categoria: "Gestión de Proyectos"
 clase: "Emprendimiento"
 emoji: "💻"
 autor: "Bastián Guerrero"
