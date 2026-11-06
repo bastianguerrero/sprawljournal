@@ -4,7 +4,7 @@ title: "Guía Definitiva: Cómo armar tu consulta digital"
 date: 2026-11-05
 tags: "articulo"
 categoria: "Gestión de Proyectos"
-clase: "Emprendimiento"
+clase: "gestion"
 emoji: "💻"
 autor: "Bastián Guerrero"
 autor_iniciales: "BG"
