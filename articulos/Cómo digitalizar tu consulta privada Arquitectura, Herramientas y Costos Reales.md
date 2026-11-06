@@ -2,7 +2,7 @@
 layout: "layout.njk"
 title: "Guía Definitiva: Cómo armar tu consulta digital"
 date: "2026-11-05"
-tags: "articulo"
+tags: articulo, destacado]
 categoria: "Gestión de Proyectos"
 clase: "gestion"
 emoji: "💻"
