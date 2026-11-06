@@ -29,7 +29,7 @@ El primer error de credibilidad es entregar una tarjeta o un contacto de WhatsAp
 
 ### **A. Comprar el Dominio en NIC Chile**
 * Para operar en Chile, el camino directo es comprar tu dominio en ****NIC Chile**** (`nic.cl`).
-* ****Precio:**** Entre $15.000 y $20.000 CLP al año.
+* ****Precio:**** Entre $9.900 y $20.000 CLP al año.
 * ****Consejo:**** Elige un nombre corto y fácil de dictar por teléfono (ej: `belenot.cl` o `kinecentrovital.cl`).
 
 **---**
