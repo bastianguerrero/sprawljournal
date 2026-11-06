@@ -1,7 +1,7 @@
 ---
 layout: layout.njk
 title: "Un buen Gráfico puede esconder un desastre"
-date: 2026-11-04
+date: "2026-11-04"
 tags: articulo
 categoria: "Gestión de Proyectos"
 clase: "gestion"
