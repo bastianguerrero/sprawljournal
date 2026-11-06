@@ -4,7 +4,7 @@ title: "Cuando no existe una API podemos obtener a lo bruto"
 date: 2026-11-02
 tags: articulo
 categoria: "Desarrollo"
-clase: "WebScraping"
+clase: "dev"
 emoji: "⛏️"
 autor: "Bastián Guerrero"
 autor_iniciales: "BG"
