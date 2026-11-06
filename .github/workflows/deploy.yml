@@ -20,6 +20,11 @@ jobs:
           node-version: 20
       - run: npm install
       - run: npm run build
+      
+      # ⚠️ AJUSTE 1: Copiar manualmente el CNAME a la carpeta de salida (_site)
+      - name: Copy CNAME to output folder
+        run: echo "sprawljournal.cl" > _site/CNAME
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
